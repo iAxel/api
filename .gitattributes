@@ -1,5 +1,14 @@
 * text=auto
 
+*.md diff=markdown
+*.js diff=javascript
+*.css diff=css
+*.php diff=php
+*.html diff=html
+*.blade.php diff=html
+
 .gitignore export-ignore
 .editorconfig export-ignore
 .gitattributes export-ignore
+
+docker-compose.yml export-ignore
