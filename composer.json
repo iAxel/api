@@ -6,20 +6,28 @@
     "require": {
         "php": "^8.1.0",
         "ext-dom": "*",
+        "ext-gmp": "*",
         "ext-pdo": "*",
         "ext-xml": "*",
         "ext-curl": "*",
+        "ext-uuid": "*",
         "ext-pcre": "*",
         "ext-json": "*",
+        "ext-intl": "*",
         "ext-ctype": "*",
+        "ext-pcntl": "*",
+        "ext-posix": "*",
+        "ext-redis": "*",
         "ext-bcmath": "*",
         "ext-openssl": "*",
         "ext-fileinfo": "*",
         "ext-mbstring": "*",
         "ext-tokenizer": "*",
+        "ext-pdo_mysql": "*",
+        "ext-pdo_pgsql": "*",
         "guzzlehttp/guzzle": "^7.4.1",
         "jenssegers/agent": "^2.6.4",
-        "laravel/framework": "^9.3.1"
+        "laravel/framework": "^9.4.1"
     },
     "autoload": {
         "psr-4": {
