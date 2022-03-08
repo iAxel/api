@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Modules\Enums\Response;
+namespace App\Modules\Enums;
 
-enum Status: int
+enum ResponseStatus: int
 {
     case OK = 200;
     case CREATED = 201;

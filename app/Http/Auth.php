@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Factory;
 
-class Auth
+final class Auth
 {
     use Helpers\HasGuards;
     use Helpers\HasResponse;

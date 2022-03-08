@@ -3,9 +3,9 @@
 namespace App\Modules;
 
 use Illuminate\Http\JsonResponse;
-use App\Modules\Enums\Response\Status;
+use App\Modules\Enums\ResponseStatus;
 
-class Response
+final class Response
 {
     /**
      * @var self|null
@@ -19,7 +19,7 @@ class Response
      */
     public function sendOK(mixed $result = null): JsonResponse
     {
-        return $this->sendSuccess(Status::OK, $result);
+        return $this->sendSuccess(ResponseStatus::OK, $result);
     }
 
     /**
@@ -29,7 +29,7 @@ class Response
      */
     public function sendCreated(mixed $result = null): JsonResponse
     {
-        return $this->sendSuccess(Status::CREATED, $result);
+        return $this->sendSuccess(ResponseStatus::CREATED, $result);
     }
 
     /**
@@ -39,7 +39,7 @@ class Response
      */
     public function sendBadRequest(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::BAD_REQUEST, $result);
+        return $this->sendNotSuccess(ResponseStatus::BAD_REQUEST, $result);
     }
 
     /**
@@ -49,7 +49,7 @@ class Response
      */
     public function sendUnauthorized(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::UNAUTHORIZED, $result);
+        return $this->sendNotSuccess(ResponseStatus::UNAUTHORIZED, $result);
     }
 
     /**
@@ -59,7 +59,7 @@ class Response
      */
     public function sendPaymentRequired(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::PAYMENT_REQUIRED, $result);
+        return $this->sendNotSuccess(ResponseStatus::PAYMENT_REQUIRED, $result);
     }
 
     /**
@@ -69,7 +69,7 @@ class Response
      */
     public function sendForbidden(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::FORBIDDEN, $result);
+        return $this->sendNotSuccess(ResponseStatus::FORBIDDEN, $result);
     }
 
     /**
@@ -79,7 +79,7 @@ class Response
      */
     public function sendNotFound(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::NOT_FOUND, $result);
+        return $this->sendNotSuccess(ResponseStatus::NOT_FOUND, $result);
     }
 
     /**
@@ -89,7 +89,7 @@ class Response
      */
     public function sendMethodNotAllowed(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::METHOD_NOT_ALLOWED, $result);
+        return $this->sendNotSuccess(ResponseStatus::METHOD_NOT_ALLOWED, $result);
     }
 
     /**
@@ -99,7 +99,7 @@ class Response
      */
     public function sendNotAcceptable(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::NOT_ACCEPTABLE, $result);
+        return $this->sendNotSuccess(ResponseStatus::NOT_ACCEPTABLE, $result);
     }
 
     /**
@@ -109,7 +109,7 @@ class Response
      */
     public function sendProxyAuthenticationRequired(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::PROXY_AUTHENTICATION_REQUIRED, $result);
+        return $this->sendNotSuccess(ResponseStatus::PROXY_AUTHENTICATION_REQUIRED, $result);
     }
 
     /**
@@ -119,7 +119,7 @@ class Response
      */
     public function sendRequestTimeout(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::REQUEST_TIMEOUT, $result);
+        return $this->sendNotSuccess(ResponseStatus::REQUEST_TIMEOUT, $result);
     }
 
     /**
@@ -129,7 +129,7 @@ class Response
      */
     public function sendConflict(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::CONFLICT, $result);
+        return $this->sendNotSuccess(ResponseStatus::CONFLICT, $result);
     }
 
     /**
@@ -139,7 +139,7 @@ class Response
      */
     public function sendGone(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::GONE, $result);
+        return $this->sendNotSuccess(ResponseStatus::GONE, $result);
     }
 
     /**
@@ -149,7 +149,7 @@ class Response
      */
     public function sendLengthRequired(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::LENGTH_REQUIRED, $result);
+        return $this->sendNotSuccess(ResponseStatus::LENGTH_REQUIRED, $result);
     }
 
     /**
@@ -159,7 +159,7 @@ class Response
      */
     public function sendPreconditionFailed(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::PRECONDITION_FAILED, $result);
+        return $this->sendNotSuccess(ResponseStatus::PRECONDITION_FAILED, $result);
     }
 
     /**
@@ -169,7 +169,7 @@ class Response
      */
     public function sendRequestEntityTooLarge(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::REQUEST_ENTITY_TOO_LARGE, $result);
+        return $this->sendNotSuccess(ResponseStatus::REQUEST_ENTITY_TOO_LARGE, $result);
     }
 
     /**
@@ -179,7 +179,7 @@ class Response
      */
     public function sendRequestURITooLong(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::REQUEST_URI_TOO_LONG, $result);
+        return $this->sendNotSuccess(ResponseStatus::REQUEST_URI_TOO_LONG, $result);
     }
 
     /**
@@ -189,7 +189,7 @@ class Response
      */
     public function sendUnsupportedMediaType(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::UNSUPPORTED_MEDIA_TYPE, $result);
+        return $this->sendNotSuccess(ResponseStatus::UNSUPPORTED_MEDIA_TYPE, $result);
     }
 
     /**
@@ -199,7 +199,7 @@ class Response
      */
     public function sendRequestedRangeNotSatisfiable(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::REQUESTED_RANGE_NOT_SATISFIABLE, $result);
+        return $this->sendNotSuccess(ResponseStatus::REQUESTED_RANGE_NOT_SATISFIABLE, $result);
     }
 
     /**
@@ -209,7 +209,7 @@ class Response
      */
     public function sendExpectationFailed(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::EXPECTATION_FAILED, $result);
+        return $this->sendNotSuccess(ResponseStatus::EXPECTATION_FAILED, $result);
     }
 
     /**
@@ -219,7 +219,7 @@ class Response
      */
     public function sendIAmATeapot(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::I_AM_A_TEAPOT, $result);
+        return $this->sendNotSuccess(ResponseStatus::I_AM_A_TEAPOT, $result);
     }
 
     /**
@@ -229,7 +229,7 @@ class Response
      */
     public function sendMisdirectedRequest(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::MISDIRECTED_REQUEST, $result);
+        return $this->sendNotSuccess(ResponseStatus::MISDIRECTED_REQUEST, $result);
     }
 
     /**
@@ -239,7 +239,7 @@ class Response
      */
     public function sendUnprocessableEntity(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::UNPROCESSABLE_ENTITY, $result);
+        return $this->sendNotSuccess(ResponseStatus::UNPROCESSABLE_ENTITY, $result);
     }
 
     /**
@@ -249,7 +249,7 @@ class Response
      */
     public function sendLocked(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::LOCKED, $result);
+        return $this->sendNotSuccess(ResponseStatus::LOCKED, $result);
     }
 
     /**
@@ -259,7 +259,7 @@ class Response
      */
     public function sendFailedDependency(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::FAILED_DEPENDENCY, $result);
+        return $this->sendNotSuccess(ResponseStatus::FAILED_DEPENDENCY, $result);
     }
 
     /**
@@ -269,7 +269,7 @@ class Response
      */
     public function sendTooEarly(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::TOO_EARLY, $result);
+        return $this->sendNotSuccess(ResponseStatus::TOO_EARLY, $result);
     }
 
     /**
@@ -279,7 +279,7 @@ class Response
      */
     public function sendUpgradeRequired(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::UPGRADE_REQUIRED, $result);
+        return $this->sendNotSuccess(ResponseStatus::UPGRADE_REQUIRED, $result);
     }
 
     /**
@@ -289,7 +289,7 @@ class Response
      */
     public function sendPreconditionRequired(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::PRECONDITION_REQUIRED, $result);
+        return $this->sendNotSuccess(ResponseStatus::PRECONDITION_REQUIRED, $result);
     }
 
     /**
@@ -299,7 +299,7 @@ class Response
      */
     public function sendTooManyRequest(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::TOO_MANY_REQUESTS, $result);
+        return $this->sendNotSuccess(ResponseStatus::TOO_MANY_REQUESTS, $result);
     }
 
     /**
@@ -309,7 +309,7 @@ class Response
      */
     public function sendRequestHeaderFieldsTooLarge(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::REQUEST_HEADER_FIELDS_TOO_LARGE, $result);
+        return $this->sendNotSuccess(ResponseStatus::REQUEST_HEADER_FIELDS_TOO_LARGE, $result);
     }
 
     /**
@@ -319,7 +319,7 @@ class Response
      */
     public function sendUnavailableForLegalReasons(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::UNAVAILABLE_FOR_LEGAL_REASONS, $result);
+        return $this->sendNotSuccess(ResponseStatus::UNAVAILABLE_FOR_LEGAL_REASONS, $result);
     }
 
     /**
@@ -329,16 +329,16 @@ class Response
      */
     public function sendInternalServerError(mixed $result = null): JsonResponse
     {
-        return $this->sendNotSuccess(Status::INTERNAL_SERVER_ERROR, $result);
+        return $this->sendNotSuccess(ResponseStatus::INTERNAL_SERVER_ERROR, $result);
     }
 
     /**
-     * @param Status $status
+     * @param ResponseStatus $status
      * @param mixed|null $result
      *
      * @return JsonResponse
      */
-    protected function sendSuccess(Status $status, mixed $result = null): JsonResponse
+    protected function sendSuccess(ResponseStatus $status, mixed $result = null): JsonResponse
     {
         if (!$result) {
             $result = [
@@ -346,16 +346,16 @@ class Response
             ];
         }
 
-        return new JsonResponse(['success' => true, 'result' => $result], $status);
+        return new JsonResponse(['success' => true, 'result' => $result], $status->value);
     }
 
     /**
-     * @param Status $status
+     * @param ResponseStatus $status
      * @param mixed|null $result
      *
      * @return JsonResponse
      */
-    protected function sendNotSuccess(Status $status, mixed $result = null): JsonResponse
+    protected function sendNotSuccess(ResponseStatus $status, mixed $result = null): JsonResponse
     {
         if (!$result) {
             $result = [
@@ -363,18 +363,18 @@ class Response
             ];
         }
 
-        return new JsonResponse(['success' => false, 'result' => $result], $status);
+        return new JsonResponse(['success' => false, 'result' => $result], $status->value);
     }
 
     /**
-     * @return static
+     * @return self
      */
-    public static function getInstance(): static
+    public static function getInstance(): self
     {
-        if (!static::$instance) {
-            static::$instance = new static;
+        if (!self::$instance) {
+            self::$instance = new self;
         }
 
-        return static::$instance;
+        return self::$instance;
     }
 }

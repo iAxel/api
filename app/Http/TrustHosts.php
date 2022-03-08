@@ -4,7 +4,7 @@ namespace App\Http;
 
 use Illuminate\Http\Middleware\TrustHosts as Middleware;
 
-class TrustHosts extends Middleware
+final class TrustHosts extends Middleware
 {
     /**
      * @return array

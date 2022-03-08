@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ObserverProvider extends ServiceProvider
+final class ObserverProvider extends ServiceProvider
 {
     /**
      * @return void

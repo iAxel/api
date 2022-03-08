@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'default' => env('QUEUE_CONNECTION', 'redis'),
+    'default' => 'redis',
 
     /*
     |--------------------------------------------------------------------------
@@ -17,14 +17,10 @@ return [
     */
 
     'connections' => [
-        'sync' => [
-            'driver' => 'sync',
-        ],
-
         'redis' => [
             'driver' => 'redis',
             'connection' => 'queue',
-            'queue' => 'default',
+            'queue' => '{job}',
             'retry_after' => 90,
             'block_for' => null,
             'after_commit' => false,
@@ -38,8 +34,8 @@ return [
     */
 
     'failed' => [
-        'driver' => env('QUEUE_FAILED_DRIVER', 'database-uuids'),
-        'database' => env('DB_CONNECTION', 'mysql'),
         'table' => 'jobs_failed',
+        'driver' => 'database-uuids',
+        'database' => env('DB_CONNECTION', 'mysql'),
     ],
 ];

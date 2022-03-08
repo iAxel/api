@@ -16,7 +16,7 @@ use Symfony\Component\HttpKernel\Exception\MethodNotAllowedHttpException;
 
 use Illuminate\Foundation\Exceptions\Handler;
 
-class Exceptions extends Handler
+final class Exceptions extends Handler
 {
     /**
      * @return void

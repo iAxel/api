@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Foundation\Support\Providers\EventServiceProvider;
 
-class EventProvider extends EventServiceProvider
+final class EventProvider extends EventServiceProvider
 {
     /**
      * @var array

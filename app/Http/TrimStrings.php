@@ -4,7 +4,7 @@ namespace App\Http;
 
 use Illuminate\Foundation\Http\Middleware\TrimStrings as Middleware;
 
-class TrimStrings extends Middleware
+final class TrimStrings extends Middleware
 {
     /**
      * @var array

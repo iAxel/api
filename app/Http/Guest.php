@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Http\Request;
 use Illuminate\Contracts\Auth\Factory;
 
-class Guest
+final class Guest
 {
     use Helpers\HasGuards;
     use Helpers\HasResponse;

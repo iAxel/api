@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'default' => env('LOG_CHANNEL', 'daily'),
+    'default' => 'daily',
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
         'daily' => [
             'driver' => 'daily',
             'path' => storage_path('logs/daily.log'),
-            'level' => env('LOG_LEVEL', 'debug'),
+            'level' => 'debug',
             'days' => 14,
         ],
     ],

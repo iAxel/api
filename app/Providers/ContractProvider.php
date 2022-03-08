@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ContractProvider extends ServiceProvider
+final class ContractProvider extends ServiceProvider
 {
     /**
      * @var array

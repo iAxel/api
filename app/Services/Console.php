@@ -6,7 +6,7 @@ use function app_path;
 
 use Illuminate\Foundation\Console\Kernel;
 
-class Console extends Kernel
+final class Console extends Kernel
 {
     /**
      * @return void

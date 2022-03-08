@@ -5,7 +5,7 @@ namespace App\Providers;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 
-class AuthProvider extends ServiceProvider
+final class AuthProvider extends ServiceProvider
 {
     /**
      * @var array

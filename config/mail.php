@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'default' => env('MAIL_MAILER', 'smtp'),
+    'default' => 'smtp',
 
     /*
     |--------------------------------------------------------------------------
@@ -25,11 +25,6 @@ return [
             'password' => env('MAIL_PASS'),
             'encryption' => env('MAIL_ENCRYPT'),
             'timeout' => null,
-            'auth_mode' => null,
-        ],
-
-        'array' => [
-            'transport' => 'array',
         ],
     ],
 

@@ -1,7 +1,7 @@
 <?php
 
-use App\Modules\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
 return new class extends Migration
@@ -9,7 +9,7 @@ return new class extends Migration
     /**
      * @var string
      */
-    protected string $table = '';
+    protected string $table = 'jobs_failed';
 
     /**
      * @return void
@@ -19,12 +19,19 @@ return new class extends Migration
         Schema::create($this->table, function (Blueprint $table) {
             $table->bigIncrements('id');
 
-            $table->timestamp('created_at')->useCurrent();
-            $table->timestamp('updated_at')->useCurrentOnUpdate();
+            $table->uid('uuid');
+
+            $table->text('queue');
+            $table->text('connection');
+
+            $table->longText('payload');
+            $table->longText('exception');
+
+            $table->timestamp('failed_at')->useCurrent();
         });
 
         Schema::table($this->table, function (Blueprint $table) {
-            //
+            $table->unique(['uuid']);
         });
     }
 

@@ -31,11 +31,28 @@ return [
             'prefix' => '',
             'prefix_indexes' => true,
             'strict' => true,
-            'engine' => null,
+            'engine' => 'InnoDB',
 
             'options' => extension_loaded('pdo_mysql')
                 ? array_filter([ PDO::MYSQL_ATTR_SSL_CA => env('MYSQL_ATTR_SSL_CA') ])
                 : [],
+        ],
+
+        'pgsql' => [
+            'driver' => 'pgsql',
+            'url' => env('PGSQL_URL'),
+            'host' => env('PGSQL_HOST'),
+            'port' => env('PGSQL_PORT'),
+            'username' => env('PGSQL_USER'),
+            'password' => env('PGSQL_PASS'),
+            'database' => env('PGSQL_DATABASE'),
+            'unix_socket' => env('PGSQL_UNIX_SOCKET'),
+            'charset' => 'utf8',
+            'collation' => 'utf8_unicode_ci',
+            'prefix' => '',
+            'prefix_indexes' => true,
+            'search_path' => 'public',
+            'sslmode' => 'prefer',
         ],
     ],
 
@@ -54,36 +71,34 @@ return [
     */
 
     'redis' => [
-        'client' => env('REDIS_CLIENT', 'phpredis'),
+        'client' => 'phpredis',
 
         'options' => [
-            'cluster' => env('REDIS_CLUSTER', 'redis'),
+            'cluster' => 'redis',
         ],
 
         'cache' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'port' => env('REDIS_PORT', '6379'),
+            'host' => env('REDIS_HOST'),
+            'port' => env('REDIS_PORT'),
             'password' => env('REDIS_PASS'),
             'prefix' => 'cache:',
             'database' => 2,
-            'lock_connection' => 'default',
         ],
 
         'queue' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'port' => env('REDIS_PORT', '6379'),
+            'host' => env('REDIS_HOST'),
+            'port' => env('REDIS_PORT'),
             'password' => env('REDIS_PASS'),
             'prefix' => 'queue:',
             'database' => 1,
-            'lock_connection' => 'default',
         ],
 
         'default' => [
             'url' => env('REDIS_URL'),
-            'host' => env('REDIS_HOST', '127.0.0.1'),
-            'port' => env('REDIS_PORT', '6379'),
+            'host' => env('REDIS_HOST'),
+            'port' => env('REDIS_PORT'),
             'password' => env('REDIS_PASS'),
             'prefix' => 'default:',
             'database' => 0,

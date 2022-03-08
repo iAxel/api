@@ -4,7 +4,7 @@ namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
 
-class ValidatorProvider extends ServiceProvider
+final class ValidatorProvider extends ServiceProvider
 {
     /**
      * @return void

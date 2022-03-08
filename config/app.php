@@ -68,6 +68,18 @@ return [
 
     /*
     |--------------------------------------------------------------------------
+    | App Locales
+    |--------------------------------------------------------------------------
+    */
+
+    'locales' => [
+        'en',
+        'ru',
+        'uz',
+    ],
+
+    /*
+    |--------------------------------------------------------------------------
     | App Fallback Locale
     |--------------------------------------------------------------------------
     */
@@ -108,12 +120,13 @@ return [
         Illuminate\Validation\ValidationServiceProvider::class,
         Illuminate\View\ViewServiceProvider::class,
 
-        App\Providers\AppProvider::class,
-        App\Providers\AppProvider::class,
+        App\Providers\AuthProvider::class,
         App\Providers\EventProvider::class,
         App\Providers\RouteProvider::class,
-        App\Providers\ObserverProvider::class,
         App\Providers\ContractProvider::class,
+        App\Providers\ObserverProvider::class,
+        App\Providers\RelationProvider::class,
+        App\Providers\BlueprintProvider::class,
         App\Providers\ValidatorProvider::class,
     ],
 

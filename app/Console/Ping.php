@@ -4,7 +4,7 @@ namespace App\Console;
 
 use Illuminate\Console\Command;
 
-class Ping extends Command
+final class Ping extends Command
 {
     /**
      * @var string
