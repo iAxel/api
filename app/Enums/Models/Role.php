@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Enums;
+namespace App\Enums\Models;
+
+use App\Enums\HasAll;
 
 enum Role: int
 {
-    use Helpers\HasAll;
+    use HasAll;
 
     case ADMINISTRATOR = 1;
     case MODERATOR = 2;

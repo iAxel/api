@@ -29,7 +29,6 @@ return new class extends Migration
 
             $table->timestamp('used_at')->nullable();
             $table->timestamp('login_at')->useCurrent();
-            $table->timestamp('logout_at')->nullable();
             $table->timestamp('expired_at')->nullable();
             $table->timestamp('deleted_at')->nullable();
         });

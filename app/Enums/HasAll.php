@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Models\Enums\Helpers;
+namespace App\Enums;
 
 trait HasAll
 {

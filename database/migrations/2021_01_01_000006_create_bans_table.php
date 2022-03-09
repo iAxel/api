@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Enums\BanReason;
+use App\Enums\Models\Ban\Reason;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,7 +18,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $reasons = BanReason::all();
+        $reasons = Reason::all();
 
         Schema::create($this->table, function (Blueprint $table) use ($reasons) {
             $table->bigIncrements('id');

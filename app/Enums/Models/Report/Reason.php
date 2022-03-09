@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Enums;
+namespace App\Enums\Models\Report;
 
-enum BanReason: string
+use App\Enums\HasAll;
+
+enum Reason: string
 {
-    use Helpers\HasAll;
+    use HasAll;
 
     case SPAM = 'Spam';
     case OFFENSIVE = 'Offensive';

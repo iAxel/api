@@ -2,8 +2,8 @@
 
 namespace App\Models\Contracts;
 
-use App\Models\Enums\Reportable;
-use App\Models\Enums\ReportReason;
+use App\Enums\Models\Report\Able;
+use App\Enums\Models\Report\Reason;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -14,14 +14,14 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int $id
  *
- * @property ReportReason $reason
+ * @property Reason $reason
  *
  * @property string|null $description
  *
  * @property int $user_id
  * @property int $reportable_id
  *
- * @property Reportable $reportable_type
+ * @property Able $reportable_type
  *
  * @property Carbon $reported_at
  *

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Enums\SocialType;
+use App\Enums\Models\Social\Type;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -18,7 +18,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $types = SocialType::all();
+        $types = Type::all();
 
         Schema::create($this->table, function (Blueprint $table) use ($types) {
             $table->bigIncrements('id');
@@ -34,7 +34,7 @@ return new class extends Migration
         });
 
         Schema::table($this->table, function (Blueprint $table) {
-            $table->unique(['type', 'user_id', 'social_id']);
+            $table->unique(['type', 'user_id']);
 
             $table->foreign(['user_id'])->references(['id'])->on('users');
         });

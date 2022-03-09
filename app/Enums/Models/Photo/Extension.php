@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Enums;
+namespace App\Enums\Models\Photo;
 
-enum PhotoExtension: string
+use App\Enums\HasAll;
+
+enum Extension: string
 {
-    use Helpers\HasAll;
+    use HasAll;
 
     case PNG = 'png';
     case JPG = 'jpg';

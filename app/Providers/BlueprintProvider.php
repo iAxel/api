@@ -21,7 +21,7 @@ final class BlueprintProvider extends ServiceProvider
     protected function registerMacros(): void
     {
         Blueprint::macro('uid', function (string $column) {
-            $this->char($column, 36);
+            $this->addColumn('uuid', $column);
         });
 
         Blueprint::macro('gis', function (string $column, int $srid) {
@@ -29,7 +29,7 @@ final class BlueprintProvider extends ServiceProvider
                 'srid' => $srid,
             ]);
 
-            $this->jsonb("{$column}_json")->virtualAs("ST_AsGeoJSON($column)");
+            $this->addColumn('jsonb', "{$column}_json")->virtualAs("ST_AsGeoJSON($column)");
         });
     }
 }

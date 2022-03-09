@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Enums;
+namespace App\Enums\Models\Social;
 
-enum SocialType: string
+use App\Enums\HasAll;
+
+enum Type: string
 {
-    use Helpers\HasAll;
+    use HasAll;
 
     case GOOGLE = 'google';
     case FACEBOOK = 'facebook';

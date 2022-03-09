@@ -2,7 +2,7 @@
 
 namespace App\Models\Contracts;
 
-use App\Models\Enums\SocialType;
+use App\Enums\Models\Social\Type;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int $id
  *
- * @property SocialType $type
+ * @property Type $type
  *
  * @property int $user_id
  * @property int $social_id

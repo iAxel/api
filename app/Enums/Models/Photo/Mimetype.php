@@ -1,10 +1,12 @@
 <?php
 
-namespace App\Models\Enums;
+namespace App\Enums\Models\Photo;
 
-enum PhotoMimetype: string
+use App\Enums\HasAll;
+
+enum Mimetype: string
 {
-    use Helpers\HasAll;
+    use HasAll;
 
     case PNG = 'image/png';
     case JPG = 'image/jpg';

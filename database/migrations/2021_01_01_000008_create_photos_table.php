@@ -1,8 +1,8 @@
 <?php
 
-use App\Models\Enums\Photoable;
-use App\Models\Enums\PhotoMimetype;
-use App\Models\Enums\PhotoExtension;
+use App\Enums\Models\Photo\Able;
+use App\Enums\Models\Photo\Mimetype;
+use App\Enums\Models\Photo\Extension;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -20,11 +20,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $photoable = Photoable::all();
-        $mimetypes = PhotoMimetype::all();
-        $extensions = PhotoExtension::all();
+        $able = Able::all();
+        $mimetypes = Mimetype::all();
+        $extensions = Extension::all();
 
-        Schema::create($this->table, function (Blueprint $table) use ($photoable, $mimetypes, $extensions) {
+        Schema::create($this->table, function (Blueprint $table) use ($able, $mimetypes, $extensions) {
             $table->bigIncrements('id');
 
             $table->uid('uuid');
@@ -38,14 +38,14 @@ return new class extends Migration
 
             $table->unsignedBigInteger('photoable_id');
 
-            $table->enum('photoable_type', $photoable);
+            $table->enum('photoable_type', $able);
 
             $table->timestamp('created_at')->useCurrent();
             $table->timestamp('updated_at')->useCurrentOnUpdate();
         });
 
         Schema::table($this->table, function (Blueprint $table) {
-            //
+            $table->unique(['uuid']);
         });
     }
 

@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Enums\Role;
+use App\Enums\Models\Role;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;

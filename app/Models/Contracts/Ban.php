@@ -2,7 +2,7 @@
 
 namespace App\Models\Contracts;
 
-use App\Models\Enums\BanReason;
+use App\Enums\Models\Ban\Reason;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -12,7 +12,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 /**
  * @property int $id
  *
- * @property BanReason $reason
+ * @property Reason $reason
  *
  * @property string|null $description
  *

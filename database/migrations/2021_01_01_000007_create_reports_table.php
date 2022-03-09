@@ -1,7 +1,7 @@
 <?php
 
-use App\Models\Enums\Reportable;
-use App\Models\Enums\ReportReason;
+use App\Enums\Models\Report\Able;
+use App\Enums\Models\Report\Reason;
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -19,10 +19,10 @@ return new class extends Migration
      */
     public function up(): void
     {
-        $reasons = ReportReason::all();
-        $reportable = Reportable::all();
+        $ables = Able::all();
+        $reasons = Reason::all();
 
-        Schema::create($this->table, function (Blueprint $table) use ($reasons, $reportable) {
+        Schema::create($this->table, function (Blueprint $table) use ($ables, $reasons) {
             $table->bigIncrements('id');
 
             $table->enum('reason', $reasons);
@@ -32,13 +32,9 @@ return new class extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('reportable_id');
 
-            $table->enum('reportable_type', $reportable);
+            $table->enum('reportable_type', $ables);
 
             $table->timestamp('reported_at')->useCurrent();
-        });
-
-        Schema::table($this->table, function (Blueprint $table) {
-            //
         });
     }
 

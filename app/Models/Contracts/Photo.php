@@ -2,9 +2,9 @@
 
 namespace App\Models\Contracts;
 
-use App\Models\Enums\Photoable;
-use App\Models\Enums\PhotoMimetype;
-use App\Models\Enums\PhotoExtension;
+use App\Enums\Models\Photo\Able;
+use App\Enums\Models\Photo\Mimetype;
+use App\Enums\Models\Photo\Extension;
 
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Model;
@@ -16,8 +16,8 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  *
  * @property string $uuid
  *
- * @property PhotoMimetype $mimetype
- * @property PhotoExtension $extension
+ * @property Mimetype $mimetype
+ * @property Extension $extension
  *
  * @property double|null $size
  * @property double|null $width
@@ -25,7 +25,7 @@ use Illuminate\Database\Eloquent\Relations\MorphTo;
  *
  * @property int $photoable_id
  *
- * @property Photoable $photoable_type
+ * @property Able $photoable_type
  *
  * @property Carbon $created_at
  * @property Carbon $updated_at
